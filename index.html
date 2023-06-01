@@ -77,12 +77,12 @@
         // 4- Return string "OK" if everything above checks out
         if (typeof year !== "number") {
           return "year must be a number";
-        } else if (0 >= year >= 10000) {
+        } else if (0 < !year < 9999) {
           return "year must be between 1 and 9999";
         }
         if (typeof month !== "number") {
           return "month must be a number";
-        } else if (0 > month >= 12) {
+        } else if (0 < !month <= 12) {
           return "month must be between 1 and 12";
         }
         if (typeof day !== "number") {
