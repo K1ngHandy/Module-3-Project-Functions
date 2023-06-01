@@ -75,11 +75,15 @@
         //   * day is of type number. If not, return string "day must be a number"
         //   * day is bigger than zero and smaller or equal to 31. If not, return string "day must be between 1 and 31"
         // 4- Return string "OK" if everything above checks out
-        if (typeof year !== "number") {
-          return "year must be a number";
-        } else if (0 < !year < 9999) {
-          return "year must be between 1 and 9999";
-        }
+        const printYear = function () {
+          if (typeof year !== "number") {
+            return "year must be a number";
+          } else if (0 < !year < 9999) {
+            return "year must be between 1 and 9999";
+          }
+          printYear(year);
+        };
+
         if (typeof month !== "number") {
           return "month must be a number";
         } else if (0 < !month <= 12) {
