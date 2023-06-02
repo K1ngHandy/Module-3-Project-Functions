@@ -54,16 +54,22 @@
         // 3- THEN check that y is in the correct range for a battleship grid of 8 x 12
         //    * if y is smaller than 1 or bigger than 12, return string "y must be between 1 and 12"
         // 4- Return string "OK" if everything above checks out
-        // if (typeof x !== "number" && typeof y !== "number") {
-        //   return "both x and y must be numbers";
-        // } else if (1 > x > 8) {
-        //   return "x must be between 1 and 8";
-        // }
-        // if (1 > y > 12) {
-        //   return "y must be between 1 and 12";
-        // } else {
-        //   return "OK";
-        // }
+
+        let result;
+        if (typeof x !== "number" || typeof y !== "number") {
+          // 1
+          result = "both x and y must be numbers";
+        } else if (x < 1 || x > 8) {
+          // 2
+          result = "x must be between 1 and 8";
+        } else if (y < 1 || y > 12) {
+          // 3
+          result = "y must be between 1 and 12";
+        } else {
+          // 4
+          result = "OK";
+        }
+        return result;
       }
 
       // 👉 CHALLENGE 3
