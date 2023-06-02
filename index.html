@@ -31,10 +31,14 @@
         //   * If name is a string but its length is less than 2, return "name must be at least two characters"
         //   * If name is a string, and has a length bigger than 2, then return the string "OK"
 
-        // ✨ Your code here
         let result;
         if (typeof name !== "string") {
           result = "name must be a string";
+        } else if (typeof name === "string" && name.length < 2) {
+          result = "name must be at least two characters";
+          return result;
+        } else {
+          result = "OK";
         }
         return result;
       }
@@ -50,16 +54,16 @@
         // 3- THEN check that y is in the correct range for a battleship grid of 8 x 12
         //    * if y is smaller than 1 or bigger than 12, return string "y must be between 1 and 12"
         // 4- Return string "OK" if everything above checks out
-        if (typeof x !== "number" && typeof y !== "number") {
-          return "both x and y must be numbers";
-        } else if (1 > x > 8) {
-          return "x must be between 1 and 8";
-        }
-        if (1 > y > 12) {
-          return "y must be between 1 and 12";
-        } else {
-          return "OK";
-        }
+        // if (typeof x !== "number" && typeof y !== "number") {
+        //   return "both x and y must be numbers";
+        // } else if (1 > x > 8) {
+        //   return "x must be between 1 and 8";
+        // }
+        // if (1 > y > 12) {
+        //   return "y must be between 1 and 12";
+        // } else {
+        //   return "OK";
+        // }
       }
 
       // 👉 CHALLENGE 3
@@ -75,27 +79,29 @@
         //   * day is of type number. If not, return string "day must be a number"
         //   * day is bigger than zero and smaller or equal to 31. If not, return string "day must be between 1 and 31"
         // 4- Return string "OK" if everything above checks out
-        const printYear = function () {
-          if (typeof year !== "number") {
-            return "year must be a number";
-          } else if (0 < !year < 9999) {
-            return "year must be between 1 and 9999";
-          }
-          printYear(year);
-        };
-
-        if (typeof month !== "number") {
-          return "month must be a number";
-        } else if (0 < !month <= 12) {
-          return "month must be between 1 and 12";
-        }
-        if (typeof day !== "number") {
-          return "day must be a number";
-        } else if (0 > day >= 31) {
-          return "day must be between 1 and 31";
-        } else {
-          return "OK";
-        }
+        // const printYear = function () {
+        //   if (typeof year !== "number") {
+        //     return "year must be a number";
+        //   } else if (0 < !year < 9999) {
+        //     return "year must be between 1 and 9999";
+        //   }
+        //   printYear(year);
+        // };
+        // const printMonth = function () {
+        //   if (typeof month === "number") {
+        //     return "month must be between 1 and 12";
+        //   } else {
+        //     return "month must be a number";
+        //   }
+        //   printMonth(month);
+        // };
+        // if (typeof day !== "number") {
+        //   return "day must be a number";
+        //   // } else if (0 > day >= 31) {
+        //   //   return "day must be between 1 and 31";
+        //   // } else {
+        //   //   return "OK";
+        // }
       }
 
       // 👉 CHALLENGE 4
