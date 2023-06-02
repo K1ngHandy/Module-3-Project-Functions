@@ -33,11 +33,13 @@
 
         let result;
         if (typeof name !== "string") {
+          // 1
           result = "name must be a string";
         } else if (typeof name === "string" && name.length < 2) {
+          // 2
           result = "name must be at least two characters";
-          return result;
         } else {
+          // 3
           result = "OK";
         }
         return result;
@@ -85,29 +87,31 @@
         //   * day is of type number. If not, return string "day must be a number"
         //   * day is bigger than zero and smaller or equal to 31. If not, return string "day must be between 1 and 31"
         // 4- Return string "OK" if everything above checks out
-        // const printYear = function () {
-        //   if (typeof year !== "number") {
-        //     return "year must be a number";
-        //   } else if (0 < !year < 9999) {
-        //     return "year must be between 1 and 9999";
-        //   }
-        //   printYear(year);
-        // };
-        // const printMonth = function () {
-        //   if (typeof month === "number") {
-        //     return "month must be between 1 and 12";
-        //   } else {
-        //     return "month must be a number";
-        //   }
-        //   printMonth(month);
-        // };
-        // if (typeof day !== "number") {
-        //   return "day must be a number";
-        //   // } else if (0 > day >= 31) {
-        //   //   return "day must be between 1 and 31";
-        //   // } else {
-        //   //   return "OK";
-        // }
+
+        let result;
+        if (typeof year !== "number") {
+          // 1
+          result = "year must be a number";
+        } else if (year > 0 || year < 9999) {
+          // 2
+          result = "year must be between 1 and 9999";
+        } else if (typeof month !== "number") {
+          // 3
+          result = "month must be a number";
+        } else if (month > 0 && month <= 12) {
+          // 4
+          result = "month must be between 1 and 12";
+        } else if (typeof day !== "number") {
+          // 5
+          result = "day must be a number";
+        } else if (day > 0 && day <= 31) {
+          // 6
+          result = "day must be between 1 and 31";
+        } else {
+          // 7
+          result = "OK";
+        }
+        return result;
       }
 
       // 👉 CHALLENGE 4
