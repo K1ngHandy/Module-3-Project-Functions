@@ -98,13 +98,13 @@
         } else if (typeof month !== "number") {
           // 3
           result = "month must be a number";
-        } else if (!month > 0 && !month <= 12) {
+        } else if (!month > 0 && !month <= 13) {
           // 4
           result = "month must be between 1 and 12";
         } else if (typeof day !== "number") {
           // 5
           result = "day must be a number";
-        } else if (!day > 0 && !day <= 31) {
+        } else if (!day > 0 && !day < 32) {
           // 6
           result = "day must be between 1 and 31";
         } else {
@@ -131,8 +131,14 @@
         // If the arguments represent a valid line return true, otherwise false.
 
         let result;
-        if (null) {
-          result = undefined;
+        if (a === null || b === null || c === null) {
+          result = false;
+        } else if (a === b && b === c) {
+          result = true;
+        } else if (a === b && b !== c) {
+          result = false;
+        } else if (a !== b && b === c) {
+          result = false;
         }
         return result;
       }
