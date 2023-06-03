@@ -151,13 +151,10 @@
         // 3- If everything above checks out return the happy or sad greeting as seen in the Examples of use above.
         let result;
         if (checkName(name) !== "OK") {
-          // 1
           result = checkName(name);
         } else if (typeof isHappy !== "boolean") {
-          // 2
           result = "isHappy must be a Boolean";
         } else if (isHappy === true) {
-          // 3
           result = `Hi, I am ${name} and I am happy.`;
         } else {
           result = `Hi, I am ${name} and I am sad.`;
