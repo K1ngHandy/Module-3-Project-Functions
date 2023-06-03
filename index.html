@@ -92,7 +92,7 @@
         if (typeof year !== "number") {
           // 1
           result = "year must be a number";
-        } else if (year > 0 || year < 9999) {
+        } else if (!year > 0 && !year < 10000) {
           // 2
           result = "year must be between 1 and 9999";
         } else if (typeof month !== "number") {
@@ -104,7 +104,7 @@
         } else if (typeof day !== "number") {
           // 5
           result = "day must be a number";
-        } else if (day > 0 && day <= 31) {
+        } else if (!day > 0 && !day <= 31) {
           // 6
           result = "day must be between 1 and 31";
         } else {
