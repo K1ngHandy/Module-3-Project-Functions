@@ -131,38 +131,31 @@
         // If the arguments represent a valid line return true, otherwise false.
 
         let result;
-        if (
-          typeof a === "number" ||
-          typeof b === "number" ||
-          typeof c === "number"
-        ) {
-          result = false;
-        } else if (a === "" || b === "" || c === "") {
-          result = false;
-        } else if (a === null || b === null || c === null) {
-          // 1
-          if (a === null && b === null && c === null) {
-            result = true;
-          } else {
+
+        function typeOfNumber() {
+          console.log(typeOfNumber());
+
+          if (
+            typeof a === "number" ||
+            typeof b === "number" ||
+            typeof c === "number"
+          ){
             result = false;
-          }
-        } else if (undefined) {
+        } return result;
+        console.log(typeOfNumber());
+
+
+        // typeOfNumber();
+
+        if (a === "" || b === "" || c === "") {
+        } else if (a === "a" || b === "b" || c === "c") {
           result = false;
-        } else if (a === "X" && b === null && c === null) {
-          // 2
-          result = false;
-        } else if (a === "X" && b === "O" && c === null) {
-          // 3
-          result = false;
-        } else if (a === "X" && b === "X" && c === "X") {
-          //4
-          result = true;
-        } else if (a === "O" && b === "O" && c === "O") {
-          // 5
-          result = true;
         }
+        //   return result;
+        // } else if (a === "" || b === "" || c === "") {
+        //   result = false;
+        // }
         return result;
-        console.log(result);
       }
 
       // 👉 CHALLENGE 5
