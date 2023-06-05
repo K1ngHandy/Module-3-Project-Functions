@@ -132,31 +132,28 @@
 
         let result;
 
-        function typeOfNumber() {
-          console.log(typeOfNumber());
-
-          if (
-            typeof a === "number" ||
-            typeof b === "number" ||
-            typeof c === "number"
-          ){
-            result = false;
-        } return result;
-        console.log(typeOfNumber());
-
-
-        // typeOfNumber();
-
-        if (a === "" || b === "" || c === "") {
-        } else if (a === "a" || b === "b" || c === "c") {
+        // check if number.
+        if (
+          typeof a === "number" ||
+          typeof b === "number" ||
+          typeof c === "number"
+        ) {
+          result = false;
+        } else if (undefined) {
+          // 2nd result.
+          result = true;
+        } else if (a === "" || b === "" || c === "") {
+          // 3rd result.
+          result = false;
+        } else if ( typeof a === null || typeof b === null || typeof c === null ) {
+          result = true;
+        } else if (a === "" || b === "" || c === "") {
+          // 4th result.
           result = false;
         }
-        //   return result;
-        // } else if (a === "" || b === "" || c === "") {
-        //   result = false;
-        // }
+
         return result;
-      }
+
 
       // 👉 CHALLENGE 5
       function greet(name, isHappy) {
