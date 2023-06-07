@@ -139,21 +139,26 @@
           typeof c === "number"
         ) {
           result = false;
-        } else if (undefined) {
-          // 2nd result.
+        } else if ((a !== b || b !== c || c !== a) && (a === "X" && b === "O" && c === null)) {
           result = true;
-        } else if (a === "" || b === "" || c === "") {
-          // 3rd result.
+        }
+        else if (
+          a === b &&
+          b === c &&
+          (a === "X" || a === "O" || a === null)
+        ) {
+          result = true;
+        } else if (a === "x" || b === "x" || c === "x") {
           result = false;
-        } else if ( typeof a === null || typeof b === null || typeof c === null ) {
-          result = true;
-        } else if (a === "" || b === "" || c === "") {
-          // 4th result.
+        } else if (a == "a" || b == "b" || c == "c") {
+          result = false;
+        } else if (a === "o" || b === "o" || c === "o") {
+          result = false;
+        } else {
           result = false;
         }
-
         return result;
-
+      }
 
       // 👉 CHALLENGE 5
       function greet(name, isHappy) {
